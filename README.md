@@ -1,6 +1,6 @@
-# Silently osing commits with SQLite
+# Silently losing committed writes with SQLite WAL corruption
 
-A simple bit flip in the WAL can silently lose committed entries.
+A simple bit flip in the WAL can silently lose committed entries. This is because when a corrupted entry is found in the log, SQLite truncates it, despite the existence of successfully committed entries later in the log.
 
 
 > ***SQLite assumes that the detection and/or correction of bit errors** caused by cosmic rays, thermal noise, quantum fluctuations, device driver bugs, or other mechanisms, **is the responsibility of the underlying hardware and operating system**. SQLite does not add any redundancy to the database file for the purpose of detecting corruption or I/O errors. **SQLite assumes that the data it reads is exactly the same data that it previously wrote.***
@@ -68,4 +68,4 @@ All rows in the users table:
 ]
 ```
 
-As you can see, a single bit flip against _committed entries_ will lose data. This is because when a corrupted entry is found in the log, SQLite truncates it, despite the existence of successfully committed entries later in the log.
+As you can see, a single bit flip against _committed entries_ will lose data.
