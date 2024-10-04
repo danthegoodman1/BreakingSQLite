@@ -7,7 +7,7 @@ A simple bit flip in the WAL can silently lose committed entries. This is becaus
 
 [*https://sqlite.org/atomiccommit.html*](https://sqlite.org/atomiccommit.html)
 
-No errors.
+No errors, no warnings.
 
 **NOT GOOD!**
 
