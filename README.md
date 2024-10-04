@@ -64,4 +64,3 @@ All rows in the users table:
 ```
 
 As you can see, a single bit flip against _committed entries_ will lose data. This is because when a corrupted entry is found in the log, SQLite truncates it, despite the existence of successfully committed entries later in the log.
-# BreakingSQLite
