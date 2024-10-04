@@ -41,7 +41,7 @@ All rows in the users table:
 ]
 ```
 
-### Clean and flip a single bit in the WAL:
+### Reset and flip a single bit in the WAL:
 
 ```
 rm sqlite.*
