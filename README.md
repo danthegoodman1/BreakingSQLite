@@ -14,6 +14,10 @@ No errors, no warnings.
 ### See the expected case:
 
 ```
+npm install
+```
+
+```
 rm sqlite.*
 npm run write
 npm run read
