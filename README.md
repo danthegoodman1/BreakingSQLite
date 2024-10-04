@@ -6,6 +6,10 @@ No errors.
 
 **NOT GOOD!**
 
+> ***SQLite assumes that the detection and/or correction of bit errors** caused by cosmic rays, thermal noise, quantum fluctuations, device driver bugs, or other mechanisms, **is the responsibility of the underlying hardware and operating system**. SQLite does not add any redundancy to the database file for the purpose of detecting corruption or I/O errors. **SQLite assumes that the data it reads is exactly the same data that it previously wrote.***
+
+[*https://sqlite.org/atomiccommit.html*](https://sqlite.org/atomiccommit.html)
+
 ### See the expected case:
 
 ```
