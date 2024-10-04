@@ -73,4 +73,4 @@ All rows in the users table:
 ]
 ```
 
-As you can see, a single bit flip against _committed entries_ will lose data.
+As you can see, a single bit flip against _committed entries_ will lose data silently.
