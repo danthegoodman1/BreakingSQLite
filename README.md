@@ -14,6 +14,7 @@ No errors, no warnings.
 ### See the expected case:
 
 ```
+rm sqlite.*
 npm run write
 npm run read
 ```
