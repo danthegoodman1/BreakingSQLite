@@ -13,15 +13,6 @@ async function setupDatabase() {
   // Enable WAL mode
   await db.run('PRAGMA journal_mode = WAL;')
 
-  // Create table if it doesn't exist
-  await db.exec(`
-    CREATE TABLE IF NOT EXISTS users (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT,
-      email TEXT
-    )
-  `)
-
   // Read back all rows
   await readAllRows(db)
 

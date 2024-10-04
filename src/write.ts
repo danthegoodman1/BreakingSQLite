@@ -19,7 +19,7 @@ async function setupDatabase() {
     )
   `)
 
-  // Insert 10 rows without preparing
+  // insert 10 rows
   for (let i = 1; i <= 10; i++) {
     await db.run(`INSERT INTO users (name, email) VALUES (?, ?)`, [`User ${i}`, `user${i}@example.com`])
   }

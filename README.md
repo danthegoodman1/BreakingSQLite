@@ -73,4 +73,25 @@ All rows in the users table:
 ]
 ```
 
+Sometimes, it might even lose the table:
+```
+Successfully flipped a random bit in sqlite.db-wal
+Byte position: 9438, Bit position: 3
+
+> nodetsesmtemplate@0.0.1 read
+> tsx src/read.ts
+
+Error: SQLITE_ERROR: no such table: users
+--> in Database#all('SELECT * FROM users', [Function (anonymous)])
+    at <anonymous> (/Users/dangoodman/code/breaksqlite/node_modules/sqlite/src/Database.ts:283:15)
+    at new Promise (<anonymous>)
+    at Database.all (/Users/dangoodman/code/breaksqlite/node_modules/sqlite/src/Database.ts:280:12)
+    at readAllRows (/Users/dangoodman/code/breaksqlite/src/read.ts:24:25)
+    at setupDatabase (/Users/dangoodman/code/breaksqlite/src/read.ts:17:9) {
+  errno: 1,
+  code: 'SQLITE_ERROR',
+  __augmented: true
+}
+```
+
 As you can see, a single bit flip against _committed entries_ will lose data silently.
